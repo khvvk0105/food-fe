@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-const Layout = ({ children }: { children: any }) => {
+import Header from "./Header";
+import Footer from "./Footer";
+import React from "react";
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Box>
       <Header />
@@ -10,4 +11,5 @@ const Layout = ({ children }: { children: any }) => {
     </Box>
   );
 };
+
 export default Layout;

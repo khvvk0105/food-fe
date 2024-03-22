@@ -1,4 +1,4 @@
-export default function Pinecone() {
+const Pinecone = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,5 @@ export default function Pinecone() {
       />
     </svg>
   );
-}
+};
+export default Pinecone;
