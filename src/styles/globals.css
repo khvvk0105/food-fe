@@ -6,16 +6,8 @@
 
 html,
 body {
+  nargin: auto;
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
   font-family: "SF-Pro", -apple-system, sans-serif;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
