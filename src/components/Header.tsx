@@ -12,6 +12,7 @@ const Header = () => {
     <>
       <Container maxWidth={"lg"}>
         <Stack
+          marginBottom={"10px"}
           alignItems={"center"}
           justifyContent={"space-between"}
           direction={"row"}
