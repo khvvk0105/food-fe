@@ -6,8 +6,6 @@ import SagsLogo from "./logo/SagsLogo";
 import SignUpLogo from "./logo/SignUpLogo";
 // import { light, dark } from "@mui/material/styles/createPalette";
 
-const pages = ["НҮҮР", "ХООЛНЫ ЦЭС", "ХҮРГЭЛТИЙН БҮС"];
-
 const Header = () => {
   const theme = useTheme();
   return (

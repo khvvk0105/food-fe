@@ -6,7 +6,7 @@
 
 html,
 body {
-  nargin: auto;
+  margin: auto;
   max-width: 100vw;
   overflow-x: hidden;
   font-family: "SF-Pro", -apple-system, sans-serif;
