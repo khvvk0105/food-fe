@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import { ReactNode } from "react";
 
-const green = "#18BA51";
+// const green = "#18BA51";
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -14,9 +14,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: green,
-      dark: "#000000",
-      light: "#FFFFFF",
+      main: "#18BA51",
     },
   },
   typography: {

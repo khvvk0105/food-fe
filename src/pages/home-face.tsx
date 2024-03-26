@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 const homeFace = () => {
   return (
-    <Box display={"flex"} maxWidth={"lg"} bgcolor={"#18BA51"} height={"788px"}>
+    <Box display={"flex"} maxWidth={"lg"} height={"788px"}>
       <Stack alignItems={"center"} justifyContent={"center"} width={"340px"}>
         <Typography fontSize={"55px"} fontWeight={"700px"}>
           Pinecone Food delivery

@@ -1,17 +1,29 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useTheme } from "@mui/material";
 import Pinecone from "./logo/Pinecone";
 import Twitter from "./logo/Twitter";
+import Pattern from "./logo/Pattern";
 
 const Footer = () => {
-  // const theme = useTheme();
+  const theme = useTheme();
   return (
-    <>
-      <Box
-        width={"full"}
+    <Stack
+      width={theme.breakpoints.values.xl}
+      justifyContent={"center"}
+      alignItems={"center"}
+    >
+      <Stack
+        width={"100%"}
+        height={"545px"}
         bgcolor={"#18BA51"}
-        padding={"119.5px"}
         color={"white"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        flexShrink={0}
+        position={"relative"}
       >
+        <Box position={"absolute"}>
+          <Pattern />
+        </Box>
         <Stack
           direction={"row"}
           alignItems={"center"}
@@ -24,6 +36,7 @@ const Footer = () => {
         </Stack>
         <Stack
           direction={"row"}
+          width={"1200px"}
           justifyContent={"space-between"}
           alignItems={"center"}
           marginBottom={"40px"}
@@ -48,18 +61,12 @@ const Footer = () => {
             <Twitter />
           </Typography>
         </Stack>
-        <Stack
-          alignItems={"center"}
-          justifyContent={"center"}
-          marginBottom={"8px"}
-        >
+        <Stack alignItems={"center"} marginBottom={"8px"}>
           <Typography>© 2024 Pinecone Foods LLC </Typography>
-        </Stack>
-        <Stack alignItems={"center"} justifyContent={"center"}>
           Зохиогчийн эрх хуулиар хамгаалагдсан.
         </Stack>
-      </Box>
-    </>
+      </Stack>
+    </Stack>
   );
 };
 export default Footer;
