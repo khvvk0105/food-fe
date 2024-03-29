@@ -5,6 +5,7 @@ import { controlCardsData, meals } from "@/utils/dummyData";
 
 const Home = () => {
   const theme = useTheme();
+  console.log(theme);
   return (
     <Stack width={theme.breakpoints.values.xl} alignItems={"center"}>
       <Stack
