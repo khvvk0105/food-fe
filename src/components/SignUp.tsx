@@ -2,8 +2,13 @@ import { Stack, Typography, Box, Button, TextField } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
+import { useRouter } from "next/router";
 
-const signUp = () => {
+const SignUp = () => {
+  const signup_url = "http://localhost:4000/api/register";
+
+  const router = useRouter();
+
   return (
     <Stack
       width={"448px"}
@@ -95,4 +100,5 @@ const signUp = () => {
     </Stack>
   );
 };
-export default signUp;
+
+export default SignUp;

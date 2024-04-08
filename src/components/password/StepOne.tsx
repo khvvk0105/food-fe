@@ -11,8 +11,9 @@ const btnStyle = {
   padding: "5px",
   color: "#fff",
 };
-
+import { useRouter } from "next/router";
 export const StepOne = () => {
+  const router = useRouter();
   return (
     <Stack
       sx={{
@@ -48,7 +49,13 @@ export const StepOne = () => {
             />
           </FormControl>
         </Stack>
-        <Button sx={btnStyle} variant="contained">
+        <Button
+          sx={btnStyle}
+          variant="contained"
+          onClick={() => {
+            router.push("/StepTwo");
+          }}
+        >
           {"Үргэлжлүүлэх"}
         </Button>
       </Stack>

@@ -1,6 +1,8 @@
 import { Stack, Typography, Box, Button, TextField } from "@mui/material";
+import { useRouter } from "next/router";
 
 const logIn = () => {
+  const router = useRouter();
   return (
     <Stack
       width={"448px"}
@@ -50,7 +52,13 @@ const logIn = () => {
       </Box>
       <Typography marginBottom={"32px"}>Эсвэл</Typography>
       <Box width={"384px"} bgcolor={"#EEEFF2"}>
-        <Button fullWidth variant="outlined">
+        <Button
+          fullWidth
+          variant="outlined"
+          onClick={() => {
+            router.push("/sign-up");
+          }}
+        >
           Бүртгүүлэх
         </Button>
       </Box>

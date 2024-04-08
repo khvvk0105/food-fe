@@ -9,8 +9,10 @@ import {
 } from "@mui/material";
 
 import React from "react";
+import { useRouter } from "next/router";
 
 export const StepTwo = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -75,7 +77,14 @@ export const StepTwo = () => {
           </FormGroup>
         </Stack>
       </Stack>
-      <Button sx={{ btnStyle }}>{"Үргэлжлүүлэх"}</Button>
+      <Button
+        sx={{ btnStyle }}
+        onClick={() => {
+          router.push("/StepThree");
+        }}
+      >
+        {"Үргэлжлүүлэх"}
+      </Button>
     </Stack>
   );
 };
