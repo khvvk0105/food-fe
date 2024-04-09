@@ -3,12 +3,50 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const SignUp = () => {
-  const signup_url = "http://localhost:4000/api/register";
-
+  const BE_URL = "http://localhost:4000/api/register";
   const router = useRouter();
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = new FormData(event.currentTarget);
+    const userdata = {
+      name: data.get("name"),
+      email: data.get("email"),
+      password: data.get("password"),
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userdata),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, options);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    console.log("fetch", FETCHED_JSON);
+
+    const userId = FETCHED_JSON.result.rows[0].id;
+
+    localStorage.setItem("userId", userId);
+
+    console.log("user ID", localStorage.getItem("userId"));
+
+    if (FETCHED_JSON.result.rowCount == 1) {
+      router.push("/");
+    } else {
+      alert("Email or password is incorrect");
+    }
+  };
+  const [visible, setVisible] = useState<boolean>(false);
   return (
     <Stack
       width={"448px"}
@@ -32,9 +70,11 @@ const SignUp = () => {
         <Typography>Нэр</Typography>
         <TextField
           fullWidth
+          onSubmit={handleSubmit}
           id="filled-Нэрээ оруулна уу-input"
           label="Нэрээ оруулна уу"
           type="Нэрээ оруулна уу"
+          onClick={handleSubmit}
           autoComplete="current-Нэрээ оруулна уу"
           variant="filled"
         />
